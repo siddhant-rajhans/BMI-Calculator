@@ -1,24 +1,37 @@
-# BMI Calculator App
+<!-- Title Section -->
+<p align="center">
+  <a href="https://github.com/siddhant-rajhans/BMI-Calculator">
+    <img src="assets/icons/android/play_store_512.png" alt="App Logo" width="200">
+  </a>
+  <h1 align="center">BMI Calculator</h1>
+  <p align="center">A Flutter-based app to calculate BMI and monitor your health.</p>
+</p>
 
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/BMI-Calculator-App.svg)](https://github.com/yourusername/BMI-Calculator-App/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/yourusername/BMI-Calculator-App.svg)](https://github.com/yourusername/BMI-Calculator-App/network)
-[![GitHub issues](https://img.shields.io/github/issues/yourusername/BMI-Calculator-App.svg)](https://github.com/yourusername/BMI-Calculator-App/issues)
+<!-- Shields Section -->
+<p align="center">
+  <img alt="GitHub stars" src="https://img.shields.io/github/stars/siddhant-rajhans/BMI-Calculator?style=for-the-badge">
+  <img alt="GitHub forks" src="https://img.shields.io/github/forks/siddhant-rajhans/BMI-Calculator?style=for-the-badge">
+  <img alt="GitHub issues" src="https://img.shields.io/github/issues/siddhant-rajhans/BMI-Calculator?style=for-the-badge">
+</p>
 
-## Description
+## Overview
 
-The BMI (Body Mass Index) Calculator is a powerful tool designed to help users monitor their health and fitness journey. This user-friendly app provides a quick and easy way to calculate BMI and gain valuable insights into overall health.
+The BMI (Body Mass Index) Calculator is a Flutter-based app designed to help users monitor their health and fitness journey. This user-friendly app provides a quick and easy way to calculate BMI and gain valuable insights into overall health.
 
-![App Screenshot](assets/images/app_ss.png)
+<img src="assets/images/app_ss.png" alt="App Screenshot" width="200" />
 
 ## Features
 
 - **Calculate BMI:** Enter height and weight to instantly calculate BMI.
 - **BMI Interpretation:** Get clear BMI category interpretations.
 - **Personalized Recommendations:** Receive health recommendations based on BMI.
-- **History Tracking:** Record BMI calculations over time.
 - **User-Friendly Interface:** Easy navigation for users of all levels.
+
+
+## Upcoming Features
 - **Metric and Imperial Units:** Support for height and weight units.
 - **Share Your Progress:** Share results and progress with others.
+- **History Tracking:** Record BMI calculations over time.
 
 ## Why Use the BMI Calculator App
 
@@ -52,6 +65,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-**Note:** Replace `yourusername` and `app-screenshot.png` with your actual GitHub username and a screenshot of your app.
-
-For more information on how to customize this README.md file, refer to the [GitHub Markdown Guide](https://guides.github.com/features/mastering-markdown/).
+<p align="center">
+  Built with ❤️ using Flutter
+</p>
