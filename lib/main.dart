@@ -12,6 +12,7 @@ class MainApp extends StatefulWidget {
   State<MainApp> createState() => _MainAppState();
 }
 
+
 class _MainAppState extends State<MainApp> {
   var Weight_Controller = TextEditingController();
 
@@ -106,15 +107,15 @@ class _MainAppState extends State<MainApp> {
 
                   if(weight!= "" && feet != ""){
                   //BMI Calculation
-                    var int_Weight =int.parse(weight);
-                    var int_inch = int.parse(inch);
-                    var int_feet = int.parse(feet);
+                    var intWeight =int.parse(weight);
+                    var intInch = int.parse(inch);
+                    var intFeet = int.parse(feet);
 
-                    var total_inches = (int_feet * 12) + int_inch ;
-                    var total_cetimeter = total_inches * 2.54 ;
-                    var total_meter = total_cetimeter/100 ;
+                    var totalInches = (intFeet * 12) + intInch ;
+                    var totalCetimeter = totalInches * 2.54 ;
+                    var totalMeter = totalCetimeter/100 ;
 
-                    var BMI = int_Weight/(total_meter * total_meter);
+                    var BMI = intWeight/(totalMeter * totalMeter);
 
                     setState(() {
                       Result = "Your BMI is: ${BMI.toStringAsFixed(2)}";
