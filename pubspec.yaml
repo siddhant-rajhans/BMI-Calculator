@@ -1,7 +1,7 @@
 name: bmi_calculator
-description: A new Flutter project.
+description: The BMI (Body Mass Index) Calculator is a Flutter-based app designed to help users monitor their health and fitness journey. This user-friendly app provides a quick and easy way to calculate BMI and gain valuable insights into overall health.
 publish_to: 'none'
-version: 0.1.0
+version: 0.2.0
 
 environment:
   sdk: '>=3.1.0 <4.0.0'
@@ -19,4 +19,5 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
+    - assets/images/
     - assets/
