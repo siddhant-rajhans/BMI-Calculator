@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'components/Splash Screen.dart';
+import 'image_view_screen.dart';
 
 void main() {
   runApp( const MaterialApp(home: SpLash(), debugShowCheckedModeBanner: false,));
@@ -60,111 +61,146 @@ class HomeApp extends State<MainApp> {
               // color: Colors.black,
               width: 300,
               height: double.infinity,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  //If you want to add an image
-                //   const Image(image: AssetImage('assets/images/img.png'),
-                //       fit: BoxFit.fill),
-                //
-                //   const SizedBox(height: 40,),
-                //   const Text('Enter details:', style: TextStyle(color: Colors.white)),
-                // const SizedBox(height: 40,),
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    //If you want to add an image
+                    // const Image(image: AssetImage('assets/images/img.png'),
+                    //     fit: BoxFit.fill),
+
+                    const SizedBox(height: 40,),
+                    const Text('Enter details:', style: TextStyle(color: Colors.white)),
+                  const SizedBox(height: 40,),
 
 
-                  TextField(
-                    controller: Weight_Controller,
-                    decoration: const InputDecoration(
-                        fillColor: Colors.white,filled: true,
-                        prefixIcon: Icon(Icons.line_weight, size: 45,),
-                        label: Text('Enter your weight(in kg)') ),
-                    keyboardType: TextInputType.number,
+                    TextField(
+                      controller: Weight_Controller,
+                      decoration: const InputDecoration(
+                          fillColor: Colors.white,filled: true,
+                          prefixIcon: Icon(Icons.line_weight, size: 45,),
+                          label: Text('Enter your weight( kg )') ),
+                      keyboardType: TextInputType.number,
 
 
-                  ),
-
-                  const Padding(
-                    padding: EdgeInsets.all(25.0),
-                    child: SizedBox(
-                      //height: 40,
-                    width: double.infinity,
-                    child: Text('eg: 5 ft 10 inch. \n\n      if you are 6ft, then enter 0 inch. ', style: TextStyle(color: Colors.white),),
                     ),
-                  ),
 
-                  TextField(
-                    controller: FtHeight_Controller,
-                    decoration: const InputDecoration(
-                        fillColor: Colors.white,filled: true,
-                        prefixIcon: Icon(Icons.height, size: 45,),
-                        label: Text('Enter your height (in Ft)') ),
-                    keyboardType: TextInputType.number,
-                  ),
+                    const Padding(
+                      padding: EdgeInsets.all(25.0),
+                      child: SizedBox(
+                        //height: 40,
+                      width: double.infinity,
+                      // child: Text('eg: 5 ft 10 inch. \n\n      if you are 6ft, then enter 0 inch. ', style: TextStyle(color: Colors.white),),
+                      ),
+                    ),
 
-                  const SizedBox(height: 30),
+                    TextField(
+                      controller: FtHeight_Controller,
+                      decoration: const InputDecoration(
+                          fillColor: Colors.white,filled: true,
+                          prefixIcon: Icon(Icons.height, size: 45,),
+                          label: Text(' Feet (e.g., 5)') ),
+                      keyboardType: TextInputType.number,
+                    ),
 
-                  TextField(
-                    controller: InHeight_Controller,
-                    decoration: const InputDecoration(
-                        fillColor: Colors.white,filled: true,
-                        prefixIcon: Icon(Icons.height, size: 45,),
-                        label: Text('Enter your height (Inch)') ),
-                    keyboardType: TextInputType.number,
-                  ),
+                    const SizedBox(height: 30),
 
-              const SizedBox(height: 30,),
+                    TextField(
+                      controller: InHeight_Controller,
+                      decoration: const InputDecoration(
+                          fillColor: Colors.white,filled: true,
+                          prefixIcon: Icon(Icons.height, size: 45,),
+                          label: Text('Inches (e.g., 11)') ),
+                      keyboardType: TextInputType.number,
+                    ),
 
-                  ElevatedButton(onPressed: (){
+                const SizedBox(height: 30,),
 
-                    var weight = Weight_Controller.text.toString();
-                    var feet = FtHeight_Controller.text.toString();
-                    var inch = InHeight_Controller.text.toString();
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        ElevatedButton(onPressed: (){
 
-                    if(weight!= "" && feet != ""){
-                    //BMI Calculation
-                      var intWeight =int.parse(weight);
-                      var intInch = int.parse(inch);
-                      var intFeet = int.parse(feet);
+                          var weight = Weight_Controller.text.toString();
+                          var feet = FtHeight_Controller.text.toString();
+                          var inch = InHeight_Controller.text.toString();
 
-                      var totalInches = (intFeet * 12) + intInch ;
-                      var totalCetimeter = totalInches * 2.54 ;
-                      var totalMeter = totalCetimeter/100 ;
+                          if(weight!= "" && feet != ""){
+                          //BMI Calculation
+                            var intWeight =int.parse(weight);
+                            var intInch = int.parse(inch);
+                            var intFeet = int.parse(feet);
 
-                      var BMI = intWeight/(totalMeter * totalMeter);
+                            var totalInches = (intFeet * 12) + intInch ;
+                            var totalCetimeter = totalInches * 2.54 ;
+                            var totalMeter = totalCetimeter/100 ;
 
-                      var message = "";
+                            var BMI = intWeight/(totalMeter * totalMeter);
 
-                      if(BMI > 25){
-                          message = "You're overweight!";
-                        bgColor = Colors.red;
-                      }
-                      else if(BMI<18){
-                        message = "You're underweight!";
-                        bgColor = Colors.red.shade200;
-                      }
-                      else {
-                        message = "You're Healthy!!";
-                        bgColor = Colors.green;
-                      }
+                            var message = "";
+
+                            if(BMI > 25){
+                                message = "You're overweight!";
+                              bgColor = Colors.red;
+                            }
+                            else if(BMI<18){
+                              message = "You're underweight!";
+                              bgColor = Colors.red.shade200;
+                            }
+                            else {
+                              message = "You're Healthy!!";
+                              bgColor = Colors.green;
+                            }
 
 
 
 
-                      setState(() {
-                        Result = "$message \n Your BMI is: ${BMI.toStringAsFixed(2)}";
-                      });
-                    }
-                    else{
-                        setState((){
-                          Result = "Please fill all the required blanks";
-                        });
-                    }
+                            setState(() {
+                              Result = "$message \n Your BMI is: ${BMI.toStringAsFixed(2)}";
+                            });
+                          }
+                          else{
+                              setState((){
+                                Result = "Please fill all the required blanks";
+                              });
+                          }
 
-                  },
-                      child: Text("Calculate")),
-                  SizedBox(height: 30,),
-                  Text(Result, style: TextStyle(color: Colors.white),)
-                ],
+                        },
+                            child: Text("Calculate")),
+
+                        SizedBox(width: 10,),
+
+
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => ImageViewScreen(imagePath: 'assets/images/img.png')), // Pass the image path
+                            );
+                          },
+                          child: Text('See BMI chart'),
+                        ),
+
+
+
+
+
+                        // ElevatedButton(onPressed: (){
+                        //   Image.asset('assets/images/img.png');
+                        // }, child: Text('See BMI chart'))
+
+
+
+
+
+                      ],
+                    ),
+                    SizedBox(height: 30,),
+                    Text(Result, style: TextStyle(color: Colors.white),),
+
+
+                  ],
+                ),
               ),
             ),
           ),
