@@ -12,7 +12,7 @@ Future<img.Image?> loadImageAndRotate(String imagePath) async {
   final img.Image? image = img.decodeImage(Uint8List.fromList(bytes));
 
   if (image != null) {
-    return img.copyRotate(image!, angle: 90);
+    return img.copyRotate(image, angle: 90);
   }
 
   return null;
@@ -30,8 +30,10 @@ class ImageViewScreen extends StatelessWidget {
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.done && snapshot.hasData) {
           return Scaffold(
+            backgroundColor: Colors.black,
             appBar: AppBar(
               title: Text('BMI Chart'),
+              backgroundColor: Colors.black,
             ),
             body: PhotoView(
               imageProvider: MemoryImage(Uint8List.fromList(img.encodePng(snapshot.data!))),
