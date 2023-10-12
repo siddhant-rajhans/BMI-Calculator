@@ -175,11 +175,12 @@ class HomeApp extends State<MainApp> {
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => ImageViewScreen(imagePath: 'assets/images/img.png')), // Pass the image path
+                              MaterialPageRoute(builder: (context) => ImageViewScreen('assets/images/img.png')), // Replace with your image path
                             );
                           },
                           child: Text('See BMI chart'),
                         ),
+
 
 
 
