@@ -5,7 +5,6 @@
   </a>
   <h1 align="center">BMI Calculator</h1>
   <p align="center">A Flutter-based app to calculate BMI and monitor your health.</p>
-</p>
 
 <!-- Shields Section -->
 <p align="center">
@@ -63,6 +62,7 @@ To get started with the BMI Calculator app:
 1. 📥 Clone this repository: `git clone https://github.com/yourusername/BMI-Calculator-App.git`
 2. 🚀 Open the project in your preferred Flutter development environment.
 3. 📱 Run the app on an emulator or physical device.
+4. Also, run the applciaiton ona the native platform.
 
 ## License
 
